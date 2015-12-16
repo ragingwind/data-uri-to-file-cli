@@ -1,6 +1,6 @@
 # data-uri-to-file-cli [![Build Status](https://travis-ci.org/ragingwind/data-uri-to-file-cli.svg?branch=master)](https://travis-ci.org/ragingwind/data-uri-to-file-cli)
 
-> Export a file or stdout from data-uri
+> Export data-uri to a file or stdout from data-uri
 
 
 ## Install

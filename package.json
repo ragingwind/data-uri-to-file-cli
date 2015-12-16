@@ -1,7 +1,7 @@
 {
   "name": "data-uri-to-file-cli",
   "version": "0.1.0",
-  "description": "Export a file from data-uri",
+  "description": "Export data-uri to a file or stdout from data-uri",
   "license": "MIT",
   "repository": "ragingwind/data-uri-to-file-cli",
   "author": {
