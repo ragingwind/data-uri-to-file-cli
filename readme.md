@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save data-uri-to-file-cli
+$ npm install -g data-uri-to-file-cli
 ```
 
 
