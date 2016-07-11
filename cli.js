@@ -2,31 +2,31 @@
 
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
 const isDataUri = require('is-data-uri');
 const toFile = require('data-uri-to-file');
 const meow = require('meow');
-const fs = require('fs');
-const path = require('path');
 
 function getPath(p) {
 	return path.resolve(process.cwd(), p);
 }
 
 const cli = meow({
-	help: [
-		'Usage',
-		'	$ data-uri-to-file <input> <filename> [options]',
-		'',
-		'Examples',
-		'	$ data-uri-to-file data:image/svg+xml;base64,PD94bWwgdmVyc... ./output',
-		'',
-		'	$ data-uri-to-file data:image/svg+xml;base64,PD94bWwgdmVyc... ./output.svg --no-ext',
-		'',
-		'	$ data-uri-to-file ./input.data ./output.svg --no-ext',
-		'',
-		'Options',
-		'	-no-ext: Write a file with no extension by mimetype'
-	]
+	help: [`
+		Usage
+			$ data-uri-to-file <input> <filename> [options]
+
+		Examples
+			$ data-uri-to-file data:image/svg+xml;base64PD94bWwgdmVyc... ./output
+
+			$ data-uri-to-file data:image/svg+xml;base64PD94bWwgdmVyc... ./output.svg --no-ext
+
+			$ data-uri-to-file ./input.data ./output.svg --no-ext
+
+		Options
+			-no-ext: Write a file with no extension by mimetype
+	`]
 });
 
 if (cli.input.length < 0) {
@@ -46,7 +46,7 @@ toFile(input).then(file => {
 	} else {
 		console.log(file.data.toString());
 	}
-}).catch(e => {
-	console.error(e.toString());
+}).catch(err => {
+	console.error(err.toString());
 	cli.showHelp(-1);
 });

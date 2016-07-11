@@ -1,7 +1,7 @@
+import fs from 'fs';
 import test from 'ava';
 import tempWrite from 'temp-write';
 import execa from 'execa';
-import fs from 'fs';
 
 test(async t => {
 	const data = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvdmc+Cgo=';
